@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Article Detail</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}"> <!-- Bootstrap CSS 추가 -->
+</head>
+<body>
+<div layout:fragment="content" class="container my-3">
+    <h2 class="border-bottom py-2">제목:</h2>
+    <div th:text="${article.title}" class="fs-4"></div>
+
+    <h3 class="my-3">내용:</h3>
+    <div class="card my-3">
+        <div class="card-body">
+            <div class="card-text" style="white-space: pre-line;" th:text="${article.content}"></div>
+            <div class="d-flex justify-content-end mt-3">
+                <div class="badge bg-light text-dark p-2 text-start">
+                    작성일: <div th:text="${article.createDate}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a th:href="@{/article/list}" class="btn btn-primary">목록으로 돌아가기</a>
+</div>
+</body>
+</html>

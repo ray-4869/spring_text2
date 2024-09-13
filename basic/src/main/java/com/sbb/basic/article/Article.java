@@ -1,4 +1,4 @@
-package com.sbb.basic;
+package com.sbb.basic.article;
 
 import jakarta.persistence.*;
 import lombok.Getter;
